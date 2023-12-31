@@ -1,0 +1,45 @@
+
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tcolorbox} % Asegúrate de que este paquete esté incluido
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{myorange}{rgb}{1,0.4,0}
+\definecolor{myblue}{rgb}{0,0,0.8}
+
+\lstdefinestyle{mystyle}{
+    language=Python,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{myblue},
+    stringstyle=\color{myorange},
+    commentstyle=\color{mygreen},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+    frame=single,
+    frameround=tttt, % Aquí se ajustan las esquinas redondeadas
+    framesep=5pt,
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\section{Código de Python en LaTeX con Esquinas Redondeadas}
+
+\begin{lstlisting}
+lista_puntos = []
+
+def DDA(x0, y0, x1, y1):
+    m = (y1 - y0) / (x1 - x0)
+    y = y0
+    for x in range(x0, x1 + 1):
+        plot(x, int(y))
+        lista_puntos.append((x, int(y)))
+        y = y + m
+\end{lstlisting}
+
+\end{document}

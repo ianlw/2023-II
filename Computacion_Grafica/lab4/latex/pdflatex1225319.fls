@@ -1,0 +1,3 @@
+PWD /mnt/Datos/UNSAAC/2023-II/Computacion_Grafica/lab4/latex
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt

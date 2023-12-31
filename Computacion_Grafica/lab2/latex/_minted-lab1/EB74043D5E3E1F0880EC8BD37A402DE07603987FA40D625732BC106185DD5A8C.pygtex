@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lista\PYGZus{}puntos} \PYG{o}{=} \PYG{p}{[]}
+\PYG{c+c1}{\PYGZsh{} dsasdasd}
+\PYG{k}{def} \PYG{n+nf}{DDA}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{x1}\PYG{p}{,} \PYG{n}{y1}\PYG{p}{):}
+    \PYG{n}{m} \PYG{o}{=} \PYG{p}{(}\PYG{n}{y1} \PYG{o}{\PYGZhy{}} \PYG{n}{y0}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{x1} \PYG{o}{\PYGZhy{}} \PYG{n}{x0}\PYG{p}{)}
+    \PYG{n}{y} \PYG{o}{=} \PYG{n}{y0}
+    \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{x1} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{):}
+        \PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{y}\PYG{p}{))}
+        \PYG{n}{lista\PYGZus{}puntos}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{x}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)))}
+        \PYG{n}{y} \PYG{o}{=} \PYG{n}{y} \PYG{o}{+} \PYG{n}{m}
+\end{Verbatim}
