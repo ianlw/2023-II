@@ -19,8 +19,8 @@ void imprime(string palabra, long tiempo)
 int main()
 {
 	// Crea y ejecuta hilo0 e hilo1
-	std::thread hilo0(imprime, "tin", 10);
-	std::thread hilo1(imprime, "ton", 5);
+	std::thread hilo0(imprime, "tin", 1);
+	std::thread hilo1(imprime, "ton", 0.8);
 
 	std::cout << "termino la ejecución de los hilos.." << '\n';
 	

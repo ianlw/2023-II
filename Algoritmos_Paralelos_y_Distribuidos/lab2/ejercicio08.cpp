@@ -19,7 +19,7 @@ int main()
 {
     vector<int> A = {10, 20, 40, 60, 80};
     vector<int> B = {30, 50, 70, 90, 10};
-    #pragma omp parallel num_threads(2) shared(A)
+    #pragma omp parallel num_threads(1) shared(A)
     {
         sumar(A);
         // sumar(B);

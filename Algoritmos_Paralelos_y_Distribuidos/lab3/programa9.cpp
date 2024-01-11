@@ -14,7 +14,7 @@ int main()
 	for (int x = 0; x < TAM; x++) {
 		a[x] = rand() % 10000;
 	}//for
-	#pragma omp parallel shared (n, a, sum) private (TID, sumLocal )
+	#pragma omp parallel shared (n, a, sum) private (TID, sumLocal ) num_threads(10)
 	{
 		TID = omp_get_thread_num();
 		sumLocal = 0;
