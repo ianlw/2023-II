@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+
+La transformada de Laplace de una función $f(t)$ se define como:
+
+\[ L\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt \]
+
+donde $s$ es una variable compleja, $t$ es la variable de la función $f(t)$, y $e^{-st} f(t)$ debe ser integrable en el intervalo $[0, \infty)$.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\[ L\{cos(t)\} = \int_{0}^{\infty} e^{-st} \cos(t) \, dt\]
+\[ \int e^{-st} \cos(t) \, dt\]
+\[ \int e^{-st} \sin(t) \, dt\]
+La transformada de Laplace de \(t^n \cdot F(t)\) se expresa como:
+
+\[ L\{t^n \cdot F(t)\} = (-1)^n \frac{d^n}{ds^n} L\{F(t)\} \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Para la integral $\int e^{-st} \cos(t) \, dt$, aplicamos integración por partes:
+
+\begin{align*}
+u &= e^{-st} & dv &= \cos(t) \, dt \\
+du &= -se^{-st} \, dt & v &= \sin(t)
+\end{align*}
+
+La fórmula de integración por partes es:
+
+\[
+\int u \, dv = uv - \int v \, du
+\]
+
+Aplicando esto, obtenemos:
+
+\begin{align*}
+\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) - \int \sin(t) \, (-se^{-st}) \, dt \\
+\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) + s \int \sin(t) \, e^{-st} \, dt \\
+% &= e^{-st} \sin(t) + e^{-st} \cos(t) - \int e^{-st} \sin(t) \, dt
+\end{align*}
+
+Integraremos por segunda ves:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para la integral $\int e^{-st} \sin(t) \, dt$, aplicamos integración por partes:
+
+\begin{align*}
+u &= e^{-st} & dv &= \sin(t) \, dt \\
+du &= -se^{-st} \, dt & v &= -\cos(t)
+\end{align*}
+
+
+\begin{align*}
+\int e^{-st} \sin(t) \, dt &= -e^{-st} \cos(t) - \int -\cos(t) \, (-se^{-st}) \, dt \\
+\int e^{-st} \sin(t) \, dt &= -e^{-st} \cos(t) - s\int \cos(t) \, e^{-st} \, dt \\
+\end{align*}
+
+Reemplazamos
+
+\begin{align*}
+\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) + s \int \sin(t) \, e^{-st} \, dt \\
+\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) + s(-e^{-st} \cos(t) - s \int \cos(t) \, e^{-st} \, dt) \\
+\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) + -se^{-st} \cos(t) - s^{2} \int \cos(t) \, e^{-st} \, dt) \\
+(1+s^{2})\int e^{-st} \cos(t) \, dt &= e^{-st} \sin(t) + -se^{-st} \cos(t)\\
+\int_{0}^{\infty} e^{-st} \cos(t) \, dt &= \frac{e^{-st} \sin(t) + -se^{-st} \cos(t)}{1+s^{2}}\\
+% &= e^{-st} \sin(t) + e^{-st} \cos(t) - \int e^{-st} \sin(t) \, dt
+\end{align*}
+
+\begin{align*}
+\int_{0}^{\infty} e^{-st} \cos(t) \, dt &= \frac{e^{-st} \sin(t) - se^{-st}\cos(t)}{1+s^{2}} \Bigg|_{0}^{\infty} \\
+\int_{0}^{\infty} e^{-st} \cos(t) \, dt &= \frac{e^{-s(\infty)} \sin(\infty) + -se^{-s(\infty)} \cos(\infty)}{1+s^{2}} - \frac{e^{-s(0)} \sin(0) + -se^{-s(0)} \cos(0)}{1+s^{2}}\\
+\end{align*}
+exponencial elevado al -infinito es 0
+
+\begin{align*}
+% &= \frac{e^{-st} \sin(t) - se^{-st}\cos(t)}{1+s^{2}} \Bigg|_{0}^{\infty} \\
+\int_{0}^{\infty} e^{-st} \cos(t) \, dt &= - \frac{-s}{1+s^{2}}\\
+\int_{0}^{\infty} e^{-st} \cos(t) \, dt &= \frac{s}{1+s^{2}}\\
+\end{align*}
+
+\[ L\{cos(t)\} = \frac{s}{1+s^{2}}\]
+
+\[ L\{t^{2}cos(t)\} = \frac{s}{1+s^{2}}\]
+
+\[ L\{t^n \cdot F(t)\} = (-1)^n \frac{d^n}{ds^n} L\{F(t)\} \]
+\[ L\{t^{2}cos(t)\} = (-1)^2 \frac{d^2}{ds^2} (\frac{s}{s^2+1}) \]
+\[ L\{t^{2}cos(t)\} = \frac{d^2}{ds^2} (\frac{s}{s^2+1}) \]
+
+
+\[ L\{t^{2}cos(t)\} = \frac{2s(s^2-3)}{(s^2+1)^3} \]
+
+\begin{align*}
+    \frac{d^2}{ds^2} (\frac{s}{s^2+1}) &= \frac{d}{ds}(\frac{s^2+1-s(2s)}{(s^2+1)^2})\\
+    \frac{d^2}{ds^2} (\frac{s}{s^2+1}) &= \frac{d}{ds}(\frac{1-s^2}{(s^2+1)^2})\\
+    \frac{d}{ds}(\frac{1-s^2}{(s^2+1)^2}) &= \frac{(-2s)(s^2+1)^2-(1-s^2)2(2s)(s^2+1)}{(s^2+1)^4}\\
+    \frac{d}{ds}(\frac{1-s^2}{(s^2+1)^2}) &= \frac{2s^5-4s^3-6s}{(s^2+1)^4}\\
+    \frac{d}{ds}(\frac{1-s^2}{(s^2+1)^2}) &= \frac{2s(s^2-3)(s^2+1)}{(s^2+1)^4}\\
+    \frac{d}{ds}(\frac{1-s^2}{(s^2+1)^2}) &= \frac{2s(s^2-3)}{(s^2+1)^3}\\
+\end{align*}
+
+
+\end{document}
+
+
